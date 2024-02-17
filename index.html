@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LVHD5N16F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0LVHD5N16F');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>panorama app</title>
+    <link rel="icon" type="image/x-icon" href="imgs/midi.png">  
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1066.0.min.js"></script>
+    <script src="js/upload.js"></script>
+</head>
+
+<body>
+    <!-- -->
+    <div class="controllers">
+        <div class="title">
+            <label class="navElement">PANORAMA🎛APP</label>
+        </div>
+        <div class="row" id="user-tag">
+            <label class="navElement">PANORAMA</label>
+            <input class="navElement" type="text" id="user-name" placeholder="user" autocomplete="off"></input>
+            <label class="navElement" id="getUsers" onclick=doModal(this)>?</label>
+
+            <input class="navElement" type="text" id="tag-name" placeholder="tag" autocomplete="off"></input>
+            <label class="navElement" id="getTags" onclick=doModal(this)>?</label>
+        </div>
+        <div class="row">
+            <label class="navElement">TYPE</label>
+            <input class="navElement" type="radio" id="atlas" name="type" value="atlas" checked>
+            <label class="navElement">atlas</label>
+            <input class="navElement" type="radio" id="map" name="type" value="map">
+            <label class="navElement">map</label>
+            <input class="navElement" type="radio" id="letter" name="type" value="letter">
+            <label class="navElement">letter</label>
+            <input class="navElement" type="radio" id="dreams" name="type" value="dreams">
+            <label class="navElement">dreams</label>
+        </div>
+        <div class="row" id="dimensions">
+            <label class="navElement">DIMENSIONS</label>
+            <input class="navElement" type="number" id="sizeX" min="1" max="10" value="5">
+            <label class="navElement">x</label>
+            <input class="navElement" type="number" id="sizeY" min="1" max="10" value="4">
+            <label class="navElement">y</label>
+        </div>
+        <div class="row">
+            <label class="navElement">ORIENTATION</label>
+            <input class="navElement" type="radio" id="horizontal" name="orientation" value="horizontal" checked>
+            <label class="navElement">horizontal</label>
+            <input class="navElement" type="radio" id="vertical" name="orientation" value="vertical">
+            <label class="navElement">vertical</label>
+            <input class="navElement" type="radio" id="1:1" name="orientation" value="square">
+            <label class="navElement">1:1</label>
+        </div>
+        <div class="row">
+            <label class="navElement">SQUARING</label>
+            <input class="navElement" type="radio" id="sqrNo" name="squaring" value="no" checked>
+            <label class="navElement">no</label>
+            <input class="navElement" type="radio" id="sqrYes" name="squaring" value="yes">
+            <label class="navElement">yes</label>
+        </div>
+        <div class="row">
+            <label class="navElement">RESOLUTION</label>
+            <input class="navElement" type="radio" id="low" name="resolution" value="low" checked>
+            <label class="navElement">low</label>
+            <input class="navElement" type="radio" id="high" name="resolution" value="high">
+            <label class="navElement">high</label>
+        </div>
+        <div class="row">
+            <label class="click" onclick=reqPanorama(this)>DOWNLOAD</label>
+            <label class="click"><input type="file" accept="image/jpeg, image/png, image/jpg" id="fileUpload" multiple>UPLOAD</label>
+        </div>
+        <div class="infoButton">
+            <label id="infoBtn" onclick=doModal(this)>⚪️</label>
+        </div>
+    </div>
+
+    <div class='modal'></div>
+
+    <script src="js/index.js"></script>
+    <script>
+        document.querySelector('#fileUpload').addEventListener('change', event => {
+            if(event.target.files.length <= 49){
+                uploadImgs(event);
+            }else{
+                alert("upload a maximum of 49 files");
+            }
+        })
+    </script>
+
+</body>
+<script></script>
+</html>
