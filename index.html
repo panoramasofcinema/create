@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LVHD5N16F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-0LVHD5N16F');
     </script>
@@ -15,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>panorama app</title>
-    <link rel="icon" type="image/x-icon" href="imgs/midi.png">  
+    <link rel="icon" type="image/x-icon" href="imgs/midi.png">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1066.0.min.js"></script>
     <script src="js/upload.js"></script>
@@ -77,8 +78,9 @@
             <label class="navElement">high</label>
         </div>
         <div class="row">
-            <label class="click" onclick=reqPanorama(this)>DOWNLOAD</label>
-            <label class="click"><input type="file" accept="image/jpeg, image/png, image/jpg" id="fileUpload" multiple>UPLOAD</label>
+            <label class="click" onclick=reqPanorama(this)>CREATE</label>
+            <label class="click"><input type="file" accept="image/jpeg, image/png, image/jpg" id="fileUpload"
+                    multiple>UPLOAD</label>
         </div>
         <div class="infoButton">
             <label id="infoBtn" onclick=doModal(this)>⚪️</label>
@@ -90,14 +92,14 @@
     <script src="js/index.js"></script>
     <script>
         document.querySelector('#fileUpload').addEventListener('change', event => {
-            if(event.target.files.length <= 49){
+            if (event.target.files.length <= 49) {
                 uploadImgs(event);
-            }else{
+            } else {
                 alert("upload a maximum of 49 files");
             }
         })
     </script>
 
 </body>
-<script></script>
+
 </html>
